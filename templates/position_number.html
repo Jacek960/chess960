@@ -9,7 +9,8 @@
      <h1>{{ position.name }}</h1>
      <br>
      <p>FEN:</p>
-     <p style="background-color:#ebeced; max-width:350px; padding:5px; text-align:center">{{ position.fen }}</p>
+
+     <div id="divClipboard" style="background-color:#ebeced; max-width:350px; padding:5px; text-align:center; float:left;">{{ position.fen }}</div><button style="float:left;margin-left:2px" class="btn btn-info btn-sm" onclick="copyClipboard()">Copy FEN</button>
 
     </td>
     <td>
@@ -29,6 +30,32 @@
 
   {% endif %}
 
+
+<script>
+function copyClipboard() {
+  var elm = document.getElementById("divClipboard");
+  // for Internet Explorer
+
+  if(document.body.createTextRange) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(elm);
+    range.select();
+    document.execCommand("Copy");
+
+  }
+  else if(window.getSelection) {
+    // other browsers
+
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(elm);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand("Copy");
+
+  }
+}
+</script>
 
 
 
