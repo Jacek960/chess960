@@ -1,0 +1,21 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+
+{% endblock %}
+
+{% block navbar %}
+{{ fontawesome_html() }}
+  {% include "_navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block sub_content %}
+    {% endblock %}
+    </div>
+
+
+{% block footer %}
+      {% include "_footer.html" %}
+{% endblock %}
+{% endblock %}

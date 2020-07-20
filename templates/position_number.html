@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+{{ position.name }} - Chess960 position generator
+{% endblock %}
+{% block sub_content %}
+<table style="width:100%">
+  <tr>
+    <td>
+     <h1>{{ position.name }}</h1>
+     <br>
+     <p>FEN:</p>
+     <p style="background-color:#ebeced; max-width:350px; padding:5px; text-align:center">{{ position.fen }}</p>
+
+    </td>
+    <td>
+    <img src="/static/images/{{ position.img }}" alt="Related Book 1" width="300px" height="300px">
+    </td>
+  </tr>
+</table>
+
+    {% if position.position == 0 %}
+{% else %}
+<button type="button" class="btn btn-success"><a style="color:white" href="{{ position.position -1 }}"> <<< Previouse position no {{ position.position }} </a></button>
+{% endif %}
+
+    {% if position.position == position_len %}
+{% else %}
+<button type="button" class="btn btn-success" style="float: right"><a style="color:white" href="{{ position.position +1 }}"> Next position no {{ position.position +2}} >>> </a></button>
+
+  {% endif %}
+
+
+
+
+
+
+{% endblock %}

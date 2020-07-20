@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+Fischer random chess rules - Chess960 position generator
+{% endblock %}
+{% block sub_content %}
+<h1>Fischer random chess</h1>
+<img src="/static/images/1.png" class="card-img-top" alt="..."
+
+                 style="width: 157px;height:157px;display: block;margin: 0 auto;margin-right: 15px;" align="left" >
+<p style="text-align: justify">"Fischer random chess, also known as <strong>Chess960</strong>, is a variation of the game of chess invented by former world chess champion Bobby Fischer.Fischer announced this new game variation on June 19, 1996, in La Plata, Argentina. Fischer random chess employs the same board and pieces as standard chess, but the starting position of the pieces on the players' home ranks is randomized, following certain rules. The random setup makes gaining an advantage through the memorization of openings impracticable; players instead must rely more on their spontaneous talent and creativity over the board.
+
+Randomizing the main pieces had long been known as shuffle chess; however, Fischer random chess introduces new rules regarding the initial random set up, "preserving the dynamic nature of the game by retaining bishops of opposite colours for each player and the right to castle for both sides". The result is 960 unique possible starting positions.</p>
+<br>
+<h3>Setup</h3>
+
+<p style="text-align: justify">Before the game, a starting position is randomly determined and set up, subject to certain requirements. White's pieces (not pawns) are placed randomly on the first rank, following two rules:
+
+    The bishops must be placed on opposite-color squares.
+    The king must be placed on a square between the rooks.
+
+Black's pieces are placed equal-and-opposite to White's pieces. (For example, if the white king is randomly determined to start on f1, then the black king is placed on f8.) Pawns are placed on the players' second ranks as in standard chess.
+
+After setup, the game is played the same as standard chess in all respects, with the exception of castling from the different possible starting positions for king and rooks.
+<br>
+There are 4 × 4 × 6 × 10 × 1 = 960 legal starting positions:
+<br>
+    4 possible squares for the light-squared bishop;<br>
+    4 possible squares for the dark-squared bishop;<br>
+    6 remaining squares for the queen;<br>
+    10 different ways to place the two (identical) knights in the remaining 5 squares;<br>
+    only 1 way to place the two rooks and king in the remaining 3 squares, since the king has to be between the two rooks.<br>
+    <br>
+
+This provides an easy way to set up a game (e.g. using a die / re-roll if needed to get values in the range 1-4 or 1-5).
+</p>
+<br>
+<h2>Castling rules</h2>
+<p style="text-align: justify">
+As in standard chess, each player may castle once per game, moving both the king and a rook in a single move; however, the castling rules were reinterpreted in Fischer random chess to support the different possible initial positions of king and rook. After castling, the final positions of king and rook are exactly the same as in standard chess, namely:
+White has castled a-side (0-0-0) and Black has castled h-side (0-0).<br>
+
+    After a-side castling (queenside/long castling in standard chess), the king finishes on the c-file and the a-side rook finishes on the d-file. The move is notated 0-0-0 as in standard chess.<br>
+    After h-side castling (kingside/short castling in standard chess), the king finishes on the g-file and the h-side rook finishes on the f-file. The move is notated 0-0 as in standard chess.<br>
+    <br>
+
+Castling prerequisites are the same as in standard chess, namely:<br>
+
+    The king and the castling rook must not have previously moved.<br>
+    No square from the king's initial square to its final square may be under attack by an enemy piece.<br>
+    All the squares between the king's initial and final squares (including the final square), and all the squares between the castling rook's initial and final squares (including the final square), must be vacant except for the king and castling rook.<br>
+
+    A recommended way to castle that is always unambiguous is to first move the king outside the playing area next to its final square, then move the rook to its final square, then move the king to its final square. It may also be useful for the player to state "I am about to castle" before castling." <a href="https://en.wikipedia.org/wiki/Fischer_random_chess" target="_blank"> <sup>wiki</sup></a></p>
+
+
+
+
+{% endblock %}

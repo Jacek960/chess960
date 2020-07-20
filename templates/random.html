@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Position no. {{ positions[random].position +1 }} - Chess960 position generator
+{% endblock %}
+
+{% block sub_content %}
+
+
+<table style="width:100%">
+  <tr>
+    <td>
+     <h1><a
+                        href="position/{{ positions[random].position }} ">{{ positions[random].name }}</a></h1>
+     <br>
+     <p>FEN:</p>
+     <p style="background-color:#ebeced; max-width:350px; padding:5px; text-align:center">{{ positions[random].fen }}</p>
+        <br>
+        <br>
+
+        <br>
+ <button type="button" class="btn btn-success"><a style="color:white" href="/random"> Random new position </a></button>
+    </td>
+    <td>
+    <img src="/static/images/{{ positions[random].img }}" alt="Related Book 1" width="300px" height="300px">
+    </td>
+  </tr>
+</table>
+
+{% endblock %}
