@@ -4,7 +4,9 @@ from positions import allpositions
 from random import randint
 from flask_fontawesome import FontAwesome
 from datetime import date
+from flask_paginate import Pagination, get_page_args
 
+chess_positions = allpositions
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -26,10 +28,25 @@ def random():
     return render_template('random.html', random=random,positions=positions)
 
 
+def get_chess_position(offset=0, per_page=10):
+    return chess_positions[offset: offset + per_page]
+
 @app.route('/all-positions')
 def all_positions():
-    positions = allpositions
-    return render_template('all_positions.html', positions=positions)
+
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    total = len(chess_positions)
+    pagination_chess = get_chess_position(offset=offset, per_page=per_page)
+    pagination = Pagination(page=page, per_page=per_page, total=total,
+                            css_framework='bootstrap4')
+    return render_template('all_positions.html',
+                           all_chess_positonts=pagination_chess,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination,
+                           )
+
 
 @app.route('/position/<int:pageID>')
 def position_number(pageID):

@@ -47,4 +47,28 @@ allpositions = [
         'position': 7,
         'name': 'Position no 8'
     },
+    {
+        'fen': 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',
+        'img': '1.png',
+        'position': 8,
+        'name': 'Position no 9'
+    },
+    {
+        'fen': 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',
+        'img': '1.png',
+        'position': 9,
+        'name': 'Position no 10'
+    },
+    {
+        'fen': 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',
+        'img': '1.png',
+        'position': 10,
+        'name': 'Position no 11'
+    },
+    {
+        'fen': 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR',
+        'img': '1.png',
+        'position': 11,
+        'name': 'Position no 12'
+    },
     ]

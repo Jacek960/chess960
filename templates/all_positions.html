@@ -5,15 +5,18 @@ All positions - Chess960 position generator
 {% block sub_content %}
 <h1>All positions</h1>
 <div class="row row-cols-1 row-cols-md-5">
-    {% for position in positions %}
+
+
+            {% for position in all_chess_positonts %}
+
 
 
 <div class="col mb-4">
-    <div class="card h-100" style="width:200px; float:left; padding:5px">
+    <div class="card h-100" style="width:200px; float:left; padding:5px; margin-left:15px">
         <div style="background-color:#f5f5f0;">
 
         <a href="position/{{ position.position }}">
-            <img src="/static/images/{{ position.img }}" class="card-img-top" alt="..."
+            <img src="/static/images/{{ position.img }}" class="card-img-top" alt="{{ position.name }}"
 
                  style="width: 157px;height:157px;display: block;margin: 0 auto;padding-top: 15px;"></a>
         <div class="card-body">
@@ -28,5 +31,9 @@ All positions - Chess960 position generator
 
     {% endfor %}
 
+
 </div>
+<div style="margin-left:auto; margin-right:auto; width:200px">
+{{ pagination.links }}
+     </div>
 {% endblock %}
