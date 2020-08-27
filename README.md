@@ -17,7 +17,7 @@ Position generator - Fisher chess (Chess 960)
 ## Screenshots
 Home Page
 ![Home page](./img/home.jpg)
-All piositions
+All positions
 ![All positions page](./img/allpositions.jpg)
 Random position Page
 ![Random position page](./img/random.jpg)
